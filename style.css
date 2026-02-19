@@ -1,0 +1,106 @@
+/*
+  style.css — Modern responsive portfolio styles
+  Light + Dark modes using CSS variables
+  Glassmorphism, subtle gradients, and responsive layout
+*/
+
+:root{
+  --bg: #f6f8fb;
+  --surface: rgba(255,255,255,0.6);
+  --muted: #6b7280;
+  --text: #0f172a;
+  --accent: linear-gradient(135deg,#7c3aed,#06b6d4);
+  --glass-border: rgba(255,255,255,0.6);
+}
+
+body.dark{
+  --bg: #0b1020;
+  --surface: rgba(255,255,255,0.03);
+  --muted: #9ca3af;
+  --text: #e6eef8;
+  --accent: linear-gradient(135deg,#4f46e5,#06b6d4);
+  --glass-border: rgba(255,255,255,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.04), transparent), var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  scroll-behavior:smooth;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:1.25rem}
+
+/* Header */
+.site-header{position:sticky;top:0;backdrop-filter: blur(6px);z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.logo{font-weight:700;text-decoration:none;color:inherit}
+.nav a{margin:0 0.6rem;color:var(--muted);text-decoration:none}
+.header-actions button{background:transparent;border:1px solid var(--glass-border);padding:0.4rem 0.6rem;border-radius:8px;cursor:pointer}
+
+/* Hero */
+.hero{padding:3.5rem 0}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
+.hero-content h1{font-size:2.1rem;margin:0}
+.name-highlight{background:linear-gradient(90deg,#a78bfa 0%, #06b6d4 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-weight:600;color:var(--muted);margin-top:0.35rem}
+.tagline{margin:0.8rem 0 1.25rem;color:var(--muted)}
+.hero-ctas .btn{margin-right:0.6rem}
+.socials{margin-top:1rem;display:flex;gap:0.6rem}
+
+.hero-visual .visual-card{padding:1rem;border-radius:14px;text-align:center}
+.visual-placeholder{height:140px;display:flex;align-items:center;justify-content:center;color:var(--muted);border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent);}
+
+/* Sections */
+.section{padding:2.2rem 0}
+.about-grid{display:grid;grid-template-columns:1fr 320px;gap:1.5rem;align-items:start}
+.about-details h4{margin-bottom:0.35rem}
+.skill-list{padding-left:1rem}
+
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.project-card{padding:1rem;border-radius:12px}
+.project-actions{margin-top:0.8rem;display:flex;gap:0.6rem}
+
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:1rem}
+.contact-form input,.contact-form textarea{width:100%;padding:0.6rem;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:inherit;margin-bottom:0.65rem}
+.form-actions{margin-top:0.4rem}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--glass-border);padding:1rem 0;margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+/* Buttons */
+.btn{display:inline-block;padding:0.55rem 0.9rem;border-radius:10px;text-decoration:none;color:inherit;border:1px solid transparent}
+.btn.primary{background:var(--accent);color:white;font-weight:600}
+.btn.outline{background:transparent;border:1px solid var(--glass-border)}
+.btn.small{padding:0.4rem 0.6rem;font-size:0.9rem}
+
+/* Glassmorphism */
+.glass{background:var(--surface);border:1px solid var(--glass-border);backdrop-filter: blur(8px);box-shadow: 0 6px 18px rgba(2,6,23,0.06);padding:1rem;border-radius:12px}
+
+/* Utility */
+.muted{color:var(--muted)}
+.small{font-size:0.9rem}
+
+/* Responsive */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr 300px}
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:720px){
+  .header-inner{gap:0.6rem}
+  .nav{display:none}
+  .hero-grid{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;gap:0.6rem}
+}
+
+/* small accessibility helpers */
+a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(99,102,241,0.15);outline-offset:2px}
