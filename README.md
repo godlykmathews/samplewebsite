@@ -139,9 +139,9 @@ Add screenshots of your website here for preview.
 
 If you’d like to connect:
 
-* Email: [your-email@example.com](mailto:your-email@example.com)
-* LinkedIn: https://linkedin.com/in/your-profile
-* GitHub: https://github.com/your-username
+* Email: [godlykmathews@outlook.com]
+* LinkedIn: [https://www.linkedin.com/in/godly-k-mathews/]
+* GitHub: [https://github.com/godlykmathews/]
 
 ---
 
